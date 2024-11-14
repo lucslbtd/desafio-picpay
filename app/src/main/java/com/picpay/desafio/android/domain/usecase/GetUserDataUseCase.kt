@@ -8,7 +8,15 @@ class GetUserDataUseCase @Inject constructor(
     private val repository: UsersRepository
 ) {
     suspend operator fun invoke(): List<User> {
-        val data = repository.fetchData()
-        return data.mapIndexed { index, name -> User(index, name) }
+        val data = repository.fetchNetworkUsers()
+
+        return data.map { user ->
+            User(
+                id = user.id,
+                name = user.name,
+                username = user.username,
+                img = user.img
+            )
+        }
     }
 }

@@ -2,7 +2,7 @@
 
 buildscript {
     ext {
-        kotlin_version = '1.8.21' // Updated
+        kotlin_version = '1.9.25' // Updated
 
         appcompat_version = '1.6.1' // Updated
         core_ktx_version = '1.10.1' // Updated
@@ -30,7 +30,7 @@ buildscript {
         rxandroid_version = "3.0.2" // Updated
         core_ktx_test_version = "1.10.1" // Updated
 
-        compose_version = '1.6.7' // Added
+        compose_version = '1.5.15' // Added
 
     }
 
@@ -42,6 +42,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:8.5.1' // Updated
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.48" // Added
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
